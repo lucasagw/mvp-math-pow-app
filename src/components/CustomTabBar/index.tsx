@@ -37,6 +37,7 @@ const CustomTabBar = ({ state, descriptors, navigation }: Props) => {
           };
           return (
             <TouchableOpacity
+              key={index}
               accessibilityRole="button"
               accessibilityState={isFocused ? { selected: true } : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
