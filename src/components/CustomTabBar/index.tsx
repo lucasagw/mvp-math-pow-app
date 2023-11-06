@@ -6,6 +6,8 @@ import { Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 // Theme
 import theme from '../../theme/theme';
+// Utils
+import { HapticsFeedback } from '../../utils';
 
 type Props = BottomTabBarProps;
 
@@ -17,7 +19,8 @@ const CustomTabBar = ({ state, descriptors, navigation }: Props) => {
           const { options } = descriptors[route.key];
           const iconName = options.tabBarIcon;
           const isFocused = state.index === index;
-          const onPress = () => {
+          const onPress = async () => {
+            await HapticsFeedback.handleImpactFeedback();
             const event = navigation.emit({
               type: 'tabPress',
               target: route.key,
@@ -29,7 +32,8 @@ const CustomTabBar = ({ state, descriptors, navigation }: Props) => {
             }
           };
 
-          const onLongPress = () => {
+          const onLongPress = async () => {
+            await HapticsFeedback.handleImpactFeedback();
             navigation.emit({
               type: 'tabLongPress',
               target: route.key,
