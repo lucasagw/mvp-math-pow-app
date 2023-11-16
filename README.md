@@ -3,7 +3,8 @@
 ## T21 - Aplicação aplicativo gamificado para o ensino de matemática básica para crianças com Síndrome de Down
 
 ## Mockup UI
-![mockup](https://github.com/ucsal/front-end-Vagas-UCSAL-TCC/assets/54041918/23a910a8-1371-48cf-9819-77b7fda21de8)
+![T21](https://github.com/lucasagw/MVP-T21/assets/54041918/320b728b-d329-49db-aad1-b4e31f676486)
+
 
 
 
