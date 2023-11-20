@@ -20,7 +20,7 @@ class Speech {
     this.options = options;
   }
   handleSpeak(text: string) {
-    speak(text);
+    speak(text, this.options);
   }
 
   async getVoices() {
@@ -31,12 +31,15 @@ class Speech {
     return await isSpeakingAsync();
   }
   async handlePause() {
-    return await pause();
+    const isSpeaking = await this.isSpeaking();
+    if (!isSpeaking) return;
+    await pause();
   }
 
   async handleResume() {
     const isSpeaking = await this.isSpeaking();
-    if (!isSpeaking) return await resume();
+    if (isSpeaking) return;
+    await resume();
   }
 
   async handleStop() {

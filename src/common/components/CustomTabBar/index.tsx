@@ -56,7 +56,7 @@ const CustomTabBar = ({ state, descriptors, navigation }: Props) => {
                     styles.innerButton,
                     {
                       backgroundColor: isFocused
-                        ? theme.color.tertiary
+                        ? theme.color.primary
                         : 'transparent',
                     },
                   ]}

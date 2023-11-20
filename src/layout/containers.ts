@@ -8,12 +8,13 @@ const STATUS_BAR_HEIGHT = StatusBar.currentHeight || 0;
 export const SafeViewContainer = styled.SafeAreaView`
   flex: 1;
   margin-top: ${STATUS_BAR_HEIGHT}px;
+  background-color: ${({ theme }) => theme.color.whiteAlt};
 `;
 
 export const FullScreen = styled.View`
   width: 100%;
   padding: ${({ theme }) => theme.padding.medium};
-  background: ${({ theme }) => theme.color.white};
+  background: ${({ theme }) => theme.color.whiteAlt};
   flex: 1;
   height: 100%;
 `;

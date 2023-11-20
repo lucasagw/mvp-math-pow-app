@@ -1,9 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // Screens
 import Home from '../screens/Home';
+import Faq from '../features/info/Faq';
 import theme from '../theme/theme';
 // Components
-import { CustomTabBar } from '../common';
+import { CustomHeader, CustomTabBar } from '../common';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,9 +17,10 @@ const AppRoutes = () => {
         tabBarShowLabel: false,
         tabBarActiveTintColor: theme.color.primary,
         tabBarStyle: {
-          backgroundColor: theme.color.white,
+          backgroundColor: theme.color.whiteAlt,
           borderTopWidth: 0,
         },
+        header: (props) => <CustomHeader {...props} />,
       }}
       tabBar={(props) => <CustomTabBar {...props} />}
     >
@@ -45,7 +47,7 @@ const AppRoutes = () => {
       />
       <Tab.Screen
         name="Info"
-        component={Home}
+        component={Faq}
         options={{
           tabBarIcon: 'info',
         }}
