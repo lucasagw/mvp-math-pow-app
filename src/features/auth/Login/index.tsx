@@ -1,28 +1,78 @@
 import React from 'react';
+import { Platform } from 'react-native';
+import { useFormik } from 'formik';
 // Components
 import TouchableButton from '../../../components/TouchableButton';
 import Input from '../../../components/Input';
-import * as C from '../../../layout/containers';
 import * as T from '../../../layout/typography';
-import * as S from './styles';
+import * as C from '../../../layout/containers';
 import LinkingButton from '../../../components/LinkingButton';
 // Types
 import { IAuthStack } from '../../../routes/auth.routes';
+import { LoginValues } from './types';
+// Schema
+import loginSchema from './schema/loginSchema';
+// Utils
 import { HapticsFeedback } from '../../../utils';
 
 interface Props {
   navigation: IAuthStack;
 }
 
+const initialValues: LoginValues = {
+  email: '',
+  password: '',
+};
+
 const Login = ({ navigation }: Props) => {
+  const form = useFormik({
+    initialValues,
+    validationSchema: loginSchema,
+    onSubmit: (values) => {
+      console.log('Submit values', values);
+    },
+    onReset: () => {},
+  });
+
+  const formValues = form.values;
+  const formErrors = form.errors;
+  const formTouches = form.touched;
+  const { handleChange, handleBlur, handleSubmit } = form;
+
   return (
-    <S.ContentContainer>
-      <S.FormContainer>
-        <T.Heading>Faça login para continuar</T.Heading>
-        <Input placeholder="Digite seu email" label="Email" />
-        <Input placeholder="Digite sua senha" label="Senha" />
-        <LinkingButton text="Esqueceu a senha?" />
-        <TouchableButton text="Logar" />
+    <C.EndContentContainer
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    >
+      <C.FormContainer animation="slideInUp" delay={500}>
+        <T.Heading textAlign="center" variant="white">
+          Faça login para continuar
+        </T.Heading>
+        <Input
+          placeholder="Digite seu email"
+          label="Email"
+          value={formValues.email}
+          onChangeText={handleChange('email')}
+          isInvalid={!!formErrors.email && !!formTouches.email}
+          onBlur={handleBlur('email')}
+          errorMessage={form.errors.email}
+        />
+        <Input
+          placeholder="Digite sua senha"
+          label="Senha"
+          value={formValues.password}
+          onChangeText={handleChange('password')}
+          isInvalid={!!formErrors.password && !!formTouches.password}
+          onBlur={handleBlur('password')}
+          errorMessage={form.errors.password}
+        />
+        <LinkingButton
+          text="Esqueceu a senha?"
+          onPress={async () => {
+            HapticsFeedback.handleImpactFeedback();
+            navigation.navigate('recovery');
+          }}
+        />
+        <TouchableButton text="Logar" onPress={() => handleSubmit()} />
         <LinkingButton>
           <T.Text
             onPress={async () => {
@@ -34,8 +84,8 @@ const Login = ({ navigation }: Props) => {
             <T.LinkText variant="primary">Cadastre-se</T.LinkText>
           </T.Text>
         </LinkingButton>
-      </S.FormContainer>
-    </S.ContentContainer>
+      </C.FormContainer>
+    </C.EndContentContainer>
   );
 };
 

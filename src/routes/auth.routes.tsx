@@ -1,5 +1,6 @@
 // Screen
 import Login from '../features/auth/Login';
+import Recovery from '../features/auth/RecoveryPassword';
 import Register from '../features/auth/Register';
 
 import {
@@ -11,7 +12,7 @@ export type IAuthStackParamsList = {
   login: undefined;
   register: undefined;
   onboarding: undefined;
-  recoveryPassword: undefined;
+  recovery: undefined;
 };
 
 const AuthStack = createStackNavigator();
@@ -23,6 +24,7 @@ const AuthRoutes = () => {
     <AuthStack.Navigator initialRouteName="login">
       <AuthStack.Screen name="login" component={Login} />
       <AuthStack.Screen name="register" component={Register} />
+      <AuthStack.Screen name="recovery" component={Recovery} />
     </AuthStack.Navigator>
   );
 };

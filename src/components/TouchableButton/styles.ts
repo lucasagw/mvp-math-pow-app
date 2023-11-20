@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import { TouchableOpacityProps } from 'react-native';
 
 export const TouchableOpacity = styled.TouchableOpacity<TouchableOpacityProps>`
-  background: ${({ theme }) => theme.color.primary};
+  background: ${({ theme }) => theme.color.tertiary};
   padding: ${({ theme }) => theme.padding.small};
   align-items: center;
   justify-content: center;

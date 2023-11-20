@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 import { StatusBar } from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import { Platform } from 'react-native';
 
 const STATUS_BAR_HEIGHT = StatusBar.currentHeight || 0;
 
@@ -14,4 +16,31 @@ export const FullScreen = styled.View`
   background: ${({ theme }) => theme.color.white};
   flex: 1;
   height: 100%;
+`;
+
+export const FormContainer = styled(Animatable.View)`
+  flex: 0.9;
+  height: 100%;
+  background-color: ${({ theme }) => theme.color.primary};
+  padding: ${({ theme }) => theme.padding.large};
+  border-radius: ${({ theme }) => theme.radius.extraLarge}
+    ${({ theme }) => theme.radius.extraLarge} 0 0;
+  ${Platform.select({
+    ios: `
+      shadow-color: #000;
+      shadow-offset: 0px 4px;
+      shadow-opacity: 0.1;
+    `,
+    android: `
+      elevation: 2;
+    `,
+  })}
+`;
+
+export const EndContentContainer = styled.KeyboardAvoidingView`
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-end;
+  background-color: ${({ theme }) => theme.color.whiteAlt};
 `;

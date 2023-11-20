@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useMemo } from 'react';
 // Components
 import { Animated, Easing } from 'react-native';
 // Styles
@@ -8,7 +8,7 @@ import type { EasingFunction, TextInputProps } from 'react-native';
 
 interface Props {
   label: string;
-  isInvalid?: boolean;
+  isInvalid: boolean;
   errorMessage?: string;
 }
 
@@ -37,7 +37,7 @@ const Input = (props: InputProps) => {
     },
   ];
 
-  useEffect(() => {
+  useMemo(() => {
     animate(Easing.bounce);
   }, [props.isInvalid]);
 
