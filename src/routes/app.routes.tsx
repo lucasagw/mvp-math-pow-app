@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Faq from '../features/info/Faq';
 import theme from '../theme/theme';
+import Courses from '../features/course/courses';
 // Components
 import { CustomHeader, CustomTabBar } from '../common';
 
@@ -11,7 +12,7 @@ const Tab = createBottomTabNavigator();
 const AppRoutes = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Courses"
       screenOptions={{
         tabBarHideOnKeyboard: true,
         tabBarShowLabel: false,
@@ -25,8 +26,8 @@ const AppRoutes = () => {
       tabBar={(props) => <CustomTabBar {...props} />}
     >
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="Courses"
+        component={Courses}
         options={{
           tabBarIcon: 'home',
         }}

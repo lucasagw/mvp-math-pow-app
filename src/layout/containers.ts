@@ -17,6 +17,7 @@ export const FullScreen = styled.View`
   background: ${({ theme }) => theme.color.whiteAlt};
   flex: 1;
   height: 100%;
+  padding-bottom: 82px;
 `;
 
 export const FormContainer = styled(Animatable.View)`
@@ -57,4 +58,15 @@ export const CenterContainerHorizontal = styled.View`
   width: '100%';
   align-items: center;
   justify-content: center;
+`;
+
+export const ListWrapper = styled.FlatList`
+  flex: 1;
+  padding: ${({ theme }) => theme.padding.extraSmall};
+  background-color: ${({ theme }) => theme.color.white};
+`;
+
+export const AnimatedView = styled(Animatable.View)`
+  width: 100%;
+  flex: 1;
 `;

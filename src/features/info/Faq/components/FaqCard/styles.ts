@@ -17,7 +17,7 @@ export const FaqCardWrapper = styled.TouchableOpacity`
       elevation: 1;
     `,
   })}
-
+  margin-bottom:${({ theme }) => theme.margin.medium};
   padding: ${({ theme }) => theme.padding.small};
 `;
 
