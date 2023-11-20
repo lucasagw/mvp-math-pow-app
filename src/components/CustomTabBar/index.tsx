@@ -56,7 +56,7 @@ const CustomTabBar = ({ state, descriptors, navigation }: Props) => {
                     styles.innerButton,
                     {
                       backgroundColor: isFocused
-                        ? theme.color.tertiary['main']
+                        ? theme.color.tertiary
                         : 'transparent',
                     },
                   ]}
@@ -64,11 +64,7 @@ const CustomTabBar = ({ state, descriptors, navigation }: Props) => {
                   <MaterialIcons
                     size={34}
                     name={iconName}
-                    color={
-                      isFocused
-                        ? theme.color.primary['main']
-                        : theme.color.black
-                    }
+                    color={isFocused ? theme.color.primary : theme.color.black}
                   />
                 </View>
               </View>

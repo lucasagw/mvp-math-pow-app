@@ -13,7 +13,7 @@ const AppRoutes = () => {
       screenOptions={{
         tabBarHideOnKeyboard: true,
         tabBarShowLabel: false,
-        tabBarActiveTintColor: theme.color.primary['main'],
+        tabBarActiveTintColor: theme.color.primary,
         tabBarStyle: {
           backgroundColor: theme.color.white,
           borderTopWidth: 0,
