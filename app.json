@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "master-bes-t21",
-    "slug": "master-bes-t21",
+    "name": "besT21",
+    "slug": "besT21",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,22 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.jhonatanjesus.besT21"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7fd7938a-6294-44a3-87c8-de29bbc5ce86"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/7fd7938a-6294-44a3-87c8-de29bbc5ce86"
     }
   }
 }

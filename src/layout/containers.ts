@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { StatusBar } from 'react-native';
+import { KeyboardAvoidingView, StatusBar } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { Platform } from 'react-native';
 
@@ -37,10 +37,23 @@ export const FormContainer = styled(Animatable.View)`
   })}
 `;
 
-export const EndContentContainer = styled.KeyboardAvoidingView`
+export const ScrollContainer = styled.ScrollView`
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  background-color: ${({ theme }) => theme.color.whiteAlt};
+`;
+
+export const EndContentContainer = styled(KeyboardAvoidingView)`
   flex: 1;
   height: 100%;
   width: 100%;
   justify-content: flex-end;
   background-color: ${({ theme }) => theme.color.whiteAlt};
+`;
+
+export const CenterContainerHorizontal = styled.View`
+  width: '100%';
+  align-items: center;
+  justify-content: center;
 `;

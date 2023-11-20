@@ -7,6 +7,7 @@ import Input from '../../../components/Input';
 import * as T from '../../../layout/typography';
 import * as C from '../../../layout/containers';
 import LinkingButton from '../../../components/LinkingButton';
+import ImageComponent from '../../../components/ImageComponent';
 // Types
 import { IAuthStack } from '../../../routes/auth.routes';
 import { LoginValues } from './types';
@@ -14,6 +15,8 @@ import { LoginValues } from './types';
 import loginSchema from './schema/loginSchema';
 // Utils
 import { HapticsFeedback } from '../../../utils';
+// Assets
+import { octopusCircle } from '../../../common/assets/images';
 
 interface Props {
   navigation: IAuthStack;
@@ -43,6 +46,16 @@ const Login = ({ navigation }: Props) => {
     <C.EndContentContainer
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
+      <C.CenterContainerHorizontal>
+        <ImageComponent
+          source={octopusCircle}
+          resizeMode="contain"
+          width={150}
+          height={150}
+          mb="medium"
+        />
+      </C.CenterContainerHorizontal>
+
       <C.FormContainer animation="slideInUp" delay={500}>
         <T.Heading textAlign="center" variant="white">
           Faça login para continuar
