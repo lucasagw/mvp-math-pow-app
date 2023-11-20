@@ -2,22 +2,21 @@ import React from 'react';
 // Components
 import * as C from '../../../layout/containers';
 import * as T from '../../../layout/typography';
-import FaqCard from './components/FaqCard';
+import CourseCard from '../components/CourseCard';
 
 const elements = Array.from({ length: 12 }, (_, i) => i + 1);
 
-const Faq = () => {
+const Courses = () => {
   return (
     <C.FullScreen>
-      <T.Heading variant="black">Perguntas Frequentes</T.Heading>
+      <T.Heading variant="black">Bem vindo amiguinho!</T.Heading>
       <C.ListWrapper
-        data={elements}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <FaqCard />}
-        keyExtractor={(item, index) => String(index)}
+        data={elements}
+        renderItem={({ item }) => <CourseCard />}
       />
     </C.FullScreen>
   );
 };
 
-export default Faq;
+export default Courses;

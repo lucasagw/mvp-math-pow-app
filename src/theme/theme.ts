@@ -15,7 +15,7 @@ const theme = {
     },
   },
   border: {
-    radius: '15px',
+    radius: '16px',
     style: '2px solid #736681',
   },
   radius: {
