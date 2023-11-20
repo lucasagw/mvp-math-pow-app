@@ -1,9 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 // Components
-import TouchableButton from '../../../components/TouchableButton';
-import LinkingButton from '../../../components/LinkingButton';
-import Input from '../../../components/Input';
+import { Input, LinkingButton, TouchableButton } from '../../../common';
 import * as T from '../../../layout/typography';
 import * as C from '../../../layout/containers';
 // Types

@@ -2,12 +2,14 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { useFormik } from 'formik';
 // Components
-import TouchableButton from '../../../components/TouchableButton';
-import Input from '../../../components/Input';
 import * as T from '../../../layout/typography';
 import * as C from '../../../layout/containers';
-import LinkingButton from '../../../components/LinkingButton';
-import ImageComponent from '../../../components/ImageComponent';
+import {
+  TouchableButton,
+  ImageComponent,
+  LinkingButton,
+  Input,
+} from '../../../common';
 // Types
 import { IAuthStack } from '../../../routes/auth.routes';
 import { LoginValues } from './types';

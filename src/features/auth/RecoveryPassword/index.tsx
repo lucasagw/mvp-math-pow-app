@@ -1,12 +1,9 @@
 import React from 'react';
-import { Platform } from 'react-native';
 import { useFormik } from 'formik';
 // Components
-import TouchableButton from '../../../components/TouchableButton';
-import Input from '../../../components/Input';
+import { TouchableButton, Input } from '../../../common';
 import * as T from '../../../layout/typography';
 import * as C from '../../../layout/containers';
-import LinkingButton from '../../../components/LinkingButton';
 // Types
 import { IAuthStack } from '../../../routes/auth.routes';
 import { RecoveryValues } from './types';
@@ -27,7 +24,8 @@ const Recovery = ({ navigation }: Props) => {
   const form = useFormik({
     initialValues,
     validationSchema: recoverySchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      await HapticsFeedback.handleImpactFeedback();
       console.log('Submit values', values);
     },
     onReset: () => {},
