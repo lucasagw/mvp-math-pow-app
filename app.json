@@ -15,14 +15,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.jhonatanjesus.besT21"
+      "package": "com.mizu.besT21"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -37,6 +39,14 @@
     },
     "updates": {
       "url": "https://u.expo.dev/7fd7938a-6294-44a3-87c8-de29bbc5ce86"
-    }
+    },
+    "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/perf",
+      "@react-native-firebase/crashlytics",
+      "@react-native-firebase/firestore",
+      "@react-native-firebase/auth",
+      "@react-native-firebase/storage"
+    ]
   }
 }

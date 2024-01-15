@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "881541933675",
+    "project_id": "bes-t21",
+    "storage_bucket": "bes-t21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881541933675:android:9f4801d6572a472cd85f2e",
+        "android_client_info": {
+          "package_name": "com.mizu.besT21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "881541933675-arscba1783aop5c1hikfvkg8d735kq74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7UiyKNGE4xB5s184U3nrrFM6hAO-F98w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "881541933675-arscba1783aop5c1hikfvkg8d735kq74.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
