@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>881541933675-q7if72r4tg7dhe0naddcgh25svatr7ee.apps.googleusercontent.com</string>
+	<string>881541933675-dj83do8j1s5qrl6odsvmuoequ1o3bpsa.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.881541933675-q7if72r4tg7dhe0naddcgh25svatr7ee</string>
+	<string>com.googleusercontent.apps.881541933675-dj83do8j1s5qrl6odsvmuoequ1o3bpsa</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAJpNDowA0NIZPiGe6U0-rikpM27LPkFDo</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mizu.besT21</string>
+	<string>com.best21.besT21</string>
 	<key>PROJECT_ID</key>
 	<string>bes-t21</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:881541933675:ios:17236d03d2fb8851d85f2e</string>
+	<string>1:881541933675:ios:590b9f40e7c20f8dd85f2e</string>
+	<key>DATABASE_URL</key>
+	<string>https://bes-t21-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
