@@ -51,7 +51,7 @@ export const EndContentContainer = styled(KeyboardAvoidingView)`
   height: 100%;
   width: 100%;
   justify-content: flex-end;
-  background-color: ${({ theme }) => theme.color.whiteAlt};
+  background-color: ${({ theme }) => theme.color.primary};
 `;
 
 export const CenterContainerHorizontal = styled.View`

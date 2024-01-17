@@ -7,6 +7,8 @@ import {
   createStackNavigator,
   StackNavigationProp,
 } from '@react-navigation/stack';
+// Components
+import { CustomAuthHeader } from '../common';
 
 export type IAuthStackParamsList = {
   login: undefined;
@@ -21,7 +23,12 @@ export type IAuthStack = StackNavigationProp<IAuthStackParamsList>;
 
 const AuthRoutes = () => {
   return (
-    <AuthStack.Navigator initialRouteName="login">
+    <AuthStack.Navigator
+      initialRouteName="login"
+      screenOptions={{
+        header: (props) => <CustomAuthHeader {...props} />,
+      }}
+    >
       <AuthStack.Screen name="login" component={Login} />
       <AuthStack.Screen name="register" component={Register} />
       <AuthStack.Screen name="recovery" component={Recovery} />
