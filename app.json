@@ -38,6 +38,11 @@
       "@react-native-firebase/perf",
       "@react-native-firebase/crashlytics",
       "@react-native-firebase/auth"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7fd7938a-6294-44a3-87c8-de29bbc5ce86"
+      }
+    }
   }
 }
