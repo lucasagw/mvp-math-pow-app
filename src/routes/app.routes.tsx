@@ -1,6 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // Screens
-import Home from '../screens/Home';
 import Faq from '../features/info/Faq';
 import theme from '../theme/theme';
 import Courses from '../features/course/courses';
@@ -34,14 +33,14 @@ const AppRoutes = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={Home}
+        component={() => <></>}
         options={{
           tabBarIcon: 'person',
         }}
       />
       <Tab.Screen
         name="Store"
-        component={Home}
+        component={() => <></>}
         options={{
           tabBarIcon: 'storefront',
         }}
