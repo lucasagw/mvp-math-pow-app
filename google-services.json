@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:881541933675:android:10a9e0fc929a7d96d85f2e",
+        "mobilesdk_app_id": "1:881541933675:android:7ade5c706e963d06d85f2e",
         "android_client_info": {
-          "package_name": "com.besT21.besT21"
+          "package_name": "com.best21.besT21"
         }
       },
       "oauth_client": [
