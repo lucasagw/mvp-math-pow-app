@@ -1,5 +1,6 @@
 {
   "expo": {
+    "owner": "bes_t21",
     "name": "besT21",
     "slug": "besT21",
     "version": "1.0.0",
@@ -23,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bes_t21.besT21"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -35,7 +37,12 @@
       "@react-native-firebase/app",
       "@react-native-firebase/perf",
       "@react-native-firebase/crashlytics",
-      "@react-native-firebase/auth",
-    ]
+      "@react-native-firebase/auth"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7fd7938a-6294-44a3-87c8-de29bbc5ce86"
+      }
+    }
   }
 }
