@@ -8,6 +8,7 @@ import Input from './components/Input';
 import LinkingButton from './components/LinkingButton';
 import ImageComponent from './components/ImageComponent';
 import CustomHeader from './components/CustomHeader';
+import CustomAuthHeader from './components/CustomAuthHeader';
 // Hooks
 import useSpeech from './hooks/useSpeech';
 import useLocalStorage from './hooks/useLocalStorage';
@@ -29,6 +30,7 @@ export {
   LinkingButton,
   ImageComponent,
   CustomHeader,
+  CustomAuthHeader,
 };
 
 // Hooks
