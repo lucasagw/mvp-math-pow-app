@@ -1,7 +1,7 @@
 import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 // Types
-import { Classification } from '../../types';
+import { Classification, IUser } from '../../types';
 // Services
 import dateService from '../services/date.service';
 
@@ -9,7 +9,7 @@ type Data = {
   status: number;
   message?: string;
   error?: string;
-  data?: any;
+  data?: IUser;
 };
 
 class UserRepo {
@@ -20,7 +20,8 @@ class UserRepo {
       try {
         const snapshot = await this.usersCollection.doc(uid).get();
         if (!snapshot.exists) return null;
-        resolve({ data: snapshot.data(), status: 200 });
+        const data: IUser = snapshot.data() as IUser;
+        resolve({ data, status: 200 });
       } catch (error) {
         console.error('Error getting user', error);
       }
@@ -61,7 +62,7 @@ class UserRepo {
           createdAt: dateService.now(),
           updatedAt: null,
           deletedAt: null,
-        };
+        } as IUser;
 
         resolve({
           message: 'Usuário cadastrado com sucesso!',
