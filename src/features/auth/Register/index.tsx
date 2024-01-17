@@ -1,7 +1,12 @@
 import React from 'react';
 import { useFormik } from 'formik';
 // Components
-import { Input, LinkingButton, TouchableButton } from '../../../common';
+import {
+  ImageComponent,
+  Input,
+  LinkingButton,
+  TouchableButton,
+} from '../../../common';
 import * as T from '../../../layout/typography';
 import * as C from '../../../layout/containers';
 // Types
@@ -11,6 +16,8 @@ import { IAuthStack } from '../../../routes/auth.routes';
 import registerSchema from './schema/registerSchema';
 // Utils
 import { HapticsFeedback } from '../../../utils';
+// Images
+import { octopusCircle } from '../../../common/assets/images';
 
 const initialValues: RegisterValues = {
   photo: '',
@@ -40,6 +47,15 @@ const Register = ({ navigation }: Props) => {
 
   return (
     <C.EndContentContainer>
+      <C.CenterContainerHorizontal>
+        <ImageComponent
+          source={octopusCircle}
+          resizeMode="contain"
+          width={150}
+          height={150}
+          mb="medium"
+        />
+      </C.CenterContainerHorizontal>
       <C.FormContainer animation="slideInUp" delay={500}>
         <T.Heading textAlign="center">Cadastre-se para continuar</T.Heading>
         <Input

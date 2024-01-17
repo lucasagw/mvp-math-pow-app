@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 // Components
-import { TouchableButton, Input } from '../../../common';
+import { TouchableButton, Input, ImageComponent } from '../../../common';
 import * as T from '../../../layout/typography';
 import * as C from '../../../layout/containers';
 // Types
@@ -11,6 +11,8 @@ import { RecoveryValues } from './types';
 import recoverySchema from './schema';
 // Utils
 import { HapticsFeedback } from '../../../utils';
+// Images
+import { octopusCircle } from '../../../common/assets/images';
 
 interface Props {
   navigation: IAuthStack;
@@ -38,6 +40,15 @@ const Recovery = ({ navigation }: Props) => {
 
   return (
     <C.EndContentContainer>
+      <C.CenterContainerHorizontal>
+        <ImageComponent
+          source={octopusCircle}
+          resizeMode="contain"
+          width={150}
+          height={150}
+          mb="medium"
+        />
+      </C.CenterContainerHorizontal>
       <C.FormContainer animation="slideInUp" delay={500}>
         <T.Heading textAlign="center">Recuperar senha</T.Heading>
         <T.Text textAlign="justify">
