@@ -13,6 +13,9 @@ import useSpeech from './hooks/useSpeech';
 import useLocalStorage from './hooks/useLocalStorage';
 // Services
 import dateService from './services/date.service';
+import authService from './services/auth.service';
+// Repositories
+import userRepo from './repositories/user.repository';
 
 /*
 EXPORTS
@@ -32,4 +35,7 @@ export {
 export { useSpeech, useLocalStorage };
 
 // Services
-export { dateService };
+export { dateService, authService };
+
+// Repositories
+export { userRepo };

@@ -9,7 +9,7 @@ const Routes = () => {
   const { isAuthenticated } = useAuthStore();
   return (
     <NavigationContainer>
-      {!isAuthenticated ? <AppRoutes /> : <AuthRoutes />}
+      {isAuthenticated ? <AppRoutes /> : <AuthRoutes />}
     </NavigationContainer>
   );
 };

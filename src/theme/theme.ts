@@ -1,7 +1,7 @@
 const theme = {
   color: {
-    whiteAlt: 'rgba(255, 255, 255,1)',
-    white: 'rgba(255, 255, 255,0.9)',
+    whiteAlt: '#FFF',
+    white: '#FFF',
     black: '#4B4B4B',
     red: '#FF5555',
     green: '#50FA7B',
