@@ -11,6 +11,12 @@ import CustomHeader from './components/CustomHeader';
 // Hooks
 import useSpeech from './hooks/useSpeech';
 import useLocalStorage from './hooks/useLocalStorage';
+// Services
+import dateService from './services/date.service';
+
+/*
+EXPORTS
+*/
 
 // COMPONENTS
 export {
@@ -24,3 +30,6 @@ export {
 
 // Hooks
 export { useSpeech, useLocalStorage };
+
+// Services
+export { dateService };
