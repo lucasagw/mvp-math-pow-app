@@ -5,7 +5,6 @@ export const HeaderWrapper = styled.View`
   display: flex;
   align-items: center;
   justify-content: center;
-
   background-color: ${({ theme }) => theme.color.whiteAlt};
 `;
 
