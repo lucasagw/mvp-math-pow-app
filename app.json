@@ -44,9 +44,7 @@
       "@react-native-firebase/app",
       "@react-native-firebase/perf",
       "@react-native-firebase/crashlytics",
-      "@react-native-firebase/firestore",
       "@react-native-firebase/auth",
-      "@react-native-firebase/storage"
     ]
   }
 }
