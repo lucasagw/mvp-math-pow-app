@@ -8,6 +8,7 @@ import * as S from './styles';
 import { TouchableOpacityProps } from 'react-native';
 // Utils
 import { HapticsFeedback } from '../../../utils';
+// Theme
 import theme from '../../../theme/theme';
 
 interface Props {

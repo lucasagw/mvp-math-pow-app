@@ -37,7 +37,6 @@ const Login = ({ navigation }: Props) => {
     initialValues,
     validationSchema: loginSchema,
     onSubmit: ({ email, password }) => login(email, password),
-    onReset: () => {},
   });
 
   const formValues = form.values;

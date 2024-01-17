@@ -37,7 +37,6 @@ const Register = ({ navigation }: Props) => {
   const form = useFormik({
     initialValues,
     onSubmit: ({ email, password }) => register(email, password),
-    onReset: () => {},
     validationSchema: registerSchema,
   });
   const formValues = form.values;

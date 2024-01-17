@@ -5,6 +5,7 @@ import * as C from './styles';
 import { Ionicons } from '@expo/vector-icons';
 // Theme
 import theme from '../../../theme/theme';
+// Types
 import { StackHeaderProps } from '@react-navigation/stack';
 
 type Props = StackHeaderProps;
