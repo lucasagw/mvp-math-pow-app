@@ -9,10 +9,7 @@ const theme = {
     primary: '#222872',
     secondary: '#005C85',
     tertiary: '#1293A6',
-    accent: {
-      main: '#FFF8C9',
-      contrastText: '#4356F3',
-    },
+    accent: '#FFF8C9',
   },
   border: {
     radius: '16px',

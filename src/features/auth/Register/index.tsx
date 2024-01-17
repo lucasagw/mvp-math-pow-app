@@ -18,6 +18,7 @@ import registerSchema from './schema/registerSchema';
 import { HapticsFeedback } from '../../../utils';
 // Images
 import { octopusCircle } from '../../../common/assets/images';
+import { useAuthStore } from '../../../store/auth/auth.store';
 
 const initialValues: RegisterValues = {
   photo: '',
@@ -32,11 +33,10 @@ interface Props {
 }
 
 const Register = ({ navigation }: Props) => {
+  const { isLoading, register } = useAuthStore();
   const form = useFormik({
     initialValues,
-    onSubmit: (values) => {
-      console.log('Submit values', values);
-    },
+    onSubmit: ({ email, password }) => register(email, password),
     onReset: () => {},
     validationSchema: registerSchema,
   });
@@ -70,6 +70,7 @@ const Register = ({ navigation }: Props) => {
         <Input
           placeholder="Digite sua senha"
           label="Senha"
+          secureTextEntry
           value={formValues.password}
           isInvalid={!!formErrors.password && !!formTouches.password}
           onChangeText={handleChange('password')}
@@ -78,6 +79,7 @@ const Register = ({ navigation }: Props) => {
         />
         <Input
           placeholder="Digite sua senha"
+          secureTextEntry
           label="Confirme a senha"
           value={formValues.confirmPassword}
           isInvalid={
@@ -87,7 +89,12 @@ const Register = ({ navigation }: Props) => {
           onBlur={handleBlur('confirmPassword')}
           errorMessage={formErrors.confirmPassword}
         />
-        <TouchableButton text="Cadastre-se" onPress={() => handleSubmit()} />
+        <TouchableButton
+          text="Cadastre-se"
+          isLoading={isLoading}
+          disabled={isLoading}
+          onPress={() => handleSubmit()}
+        />
 
         <LinkingButton>
           <T.Text

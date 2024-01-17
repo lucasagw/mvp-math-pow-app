@@ -19,6 +19,8 @@ import loginSchema from './schema/loginSchema';
 import { HapticsFeedback } from '../../../utils';
 // Assets
 import { octopusCircle } from '../../../common/assets/images';
+// Store
+import { useAuthStore } from '../../../store/auth/auth.store';
 
 interface Props {
   navigation: IAuthStack;
@@ -30,12 +32,11 @@ const initialValues: LoginValues = {
 };
 
 const Login = ({ navigation }: Props) => {
+  const { isLoading, login } = useAuthStore();
   const form = useFormik({
     initialValues,
     validationSchema: loginSchema,
-    onSubmit: (values) => {
-      console.log('Submit values', values);
-    },
+    onSubmit: ({ email, password }) => login(email, password),
     onReset: () => {},
   });
 
@@ -74,6 +75,7 @@ const Login = ({ navigation }: Props) => {
         <Input
           placeholder="Digite sua senha"
           label="Senha"
+          secureTextEntry
           value={formValues.password}
           onChangeText={handleChange('password')}
           isInvalid={!!formErrors.password && !!formTouches.password}
@@ -87,7 +89,12 @@ const Login = ({ navigation }: Props) => {
             navigation.navigate('recovery');
           }}
         />
-        <TouchableButton text="Logar" onPress={() => handleSubmit()} />
+        <TouchableButton
+          disabled={isLoading}
+          isLoading={isLoading}
+          text="Logar"
+          onPress={() => handleSubmit()}
+        />
         <LinkingButton>
           <T.Text
             onPress={async () => {

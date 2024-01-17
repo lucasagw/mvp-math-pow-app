@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'react-native-gesture-handler';
 import 'react-native-reanimated';
 // Components
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import { ThemeProvider } from 'styled-components/native';
 import { ActivityIndicator } from 'react-native';
-
+import { RootSiblingParent } from 'react-native-root-siblings';
 // Styles
 import * as S from './src/layout/containers';
 import theme from './src/theme/theme';
@@ -14,7 +14,6 @@ import Routes from './src/routes';
 // Fonts
 import { useFonts } from 'expo-font';
 import { Righteous_400Regular } from '@expo-google-fonts/righteous';
-
 import {
   Inter_400Regular,
   Inter_300Light,
@@ -26,8 +25,16 @@ import {
   Inter_800ExtraBold,
   Inter_900Black,
 } from '@expo-google-fonts/inter';
+// Store
+import { useAuthStore } from './src/store/auth/auth.store';
 
 const App = () => {
+  const { loadUser } = useAuthStore();
+
+  useEffect(() => {
+    loadUser();
+  }, []);
+
   let [fontsLoaded] = useFonts({
     Righteous_400Regular,
     Inter_400Regular,
@@ -47,10 +54,12 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <S.SafeViewContainer>
-        <Routes />
-        <ExpoStatusBar style="auto" />
-      </S.SafeViewContainer>
+      <RootSiblingParent>
+        <S.SafeViewContainer>
+          <Routes />
+          <ExpoStatusBar style="auto" />
+        </S.SafeViewContainer>
+      </RootSiblingParent>
     </ThemeProvider>
   );
 };

@@ -7,6 +7,7 @@ import { useAuthStore } from '../store/auth/auth.store';
 
 const Routes = () => {
   const { isAuthenticated } = useAuthStore();
+
   return (
     <NavigationContainer>
       {isAuthenticated ? <AppRoutes /> : <AuthRoutes />}

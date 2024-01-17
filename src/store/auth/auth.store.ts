@@ -1,12 +1,11 @@
 import { create } from 'zustand';
-// Functions
-import * as functions from './auth.functions';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 // Types
 import { IUser } from '../../types';
-import { dateService, userRepo, authService } from '../../common';
-import AsyncStorage, {
-  useAsyncStorage,
-} from '@react-native-async-storage/async-storage';
+// Services
+import { dateService, authService, toastService } from '../../common';
+// Repositories
+import { userRepo } from '../../common';
 
 const initialUserState: IUser = {
   uid: '',
@@ -45,8 +44,10 @@ export const useAuthStore = create<AuthState>((_set) => ({
       await AsyncStorage.setItem('user_uid', result.user.uid);
       const response = await userRepo.getUser(result.user.uid);
       _set({ user: response.data, isAuthenticated: true });
+      toastService.handleSuccessMessage('Login efetuado com sucesso!');
     } catch (error: any) {
       const errorMessage = authService.handleFirebaseAuthError(error.code);
+      toastService.handleErrorMessage(errorMessage);
       console.error('Error when we tried to login', error);
     } finally {
       _set({ isLoading: false });
@@ -56,8 +57,12 @@ export const useAuthStore = create<AuthState>((_set) => ({
     _set({ isLoading: true });
     try {
       await authService.passwordReset(email);
+      toastService.handleSuccessMessage(
+        'Email de recuperação enviado com sucesso!'
+      );
     } catch (error: any) {
       const errorMessage = authService.handleFirebaseAuthError(error.code);
+      toastService.handleErrorMessage(errorMessage);
       console.error('Error when we tried to resetPassword', error);
     } finally {
       _set({ isLoading: false });
@@ -68,7 +73,10 @@ export const useAuthStore = create<AuthState>((_set) => ({
     try {
       await AsyncStorage.setItem('user_uid', '');
       _set({ user: initialUserState, isAuthenticated: false });
-    } catch (error) {
+      toastService.handleSuccessMessage('Logout efetuado com sucesso!');
+    } catch (error: any) {
+      const errorMessage = authService.handleFirebaseAuthError(error.code);
+      toastService.handleErrorMessage(errorMessage);
       console.error('Error when we tried to logout', error);
     } finally {
       _set({ isLoading: false });
@@ -95,9 +103,12 @@ export const useAuthStore = create<AuthState>((_set) => ({
         password
       );
       const response = await userRepo.storeUser(result);
+      await AsyncStorage.setItem('user_uid', result.user.uid);
       _set({ user: response.data, isAuthenticated: true });
+      toastService.handleSuccessMessage('Cadastro efetuado com sucesso!');
     } catch (error: any) {
       const errorMessage = authService.handleFirebaseAuthError(error.code);
+      toastService.handleErrorMessage(errorMessage);
       console.error('Error when we tried to register user', error);
     } finally {
       _set({ isLoading: false });
