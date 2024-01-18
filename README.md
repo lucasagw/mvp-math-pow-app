@@ -73,8 +73,75 @@ Artigos base e referenciais:
 
 <div>   
 <details>
-    <summary><b>✨&nbsp;&nbsp;Como colaborar com o projeto? :&nbsp;</b></summary>
+    <summary><b>✨&nbsp;&nbsp;Colaborando e Rodando o Projeto :&nbsp;</b></summary>
     <br/>
+
+## MVP-T21 - Projeto React Native
+
+### Pré-requisitos
+
+Antes de começar, certifique-se de ter atendido aos seguintes requisitos:
+
+- Você instalou a versão mais recente do [Node.js e npm](https://nodejs.org/en/download/)
+- Você instalou o [React Native](https://reactnative.dev/docs/environment-setup)
+- Você possui uma máquina Windows/Linux/Mac.
+
+### Instalando o MVP-T21
+
+Para instalar o MVP-T21, siga estas etapas:
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/lucasagw/MVP-T21.git
+```
+
+2. Navegue até o diretório do projeto:
+```bash
+cd MVP-T21
+```
+
+3. Instale as dependências:
+```bash
+npm install
+```
+
+### Usando o MVP-T21
+
+Para usar o MVP-T21, siga estas etapas:
+
+1. Inicie o Metro Bundler:
+```bash
+npx react-native start
+```
+
+2. Em uma janela de terminal separada, execute o aplicativo:
+```bash
+npx react-native run-android
+```
+ou
+```bash
+npx react-native run-ios
+```
+dependendo da sua plataforma.
+
+### Contribuindo para o MVP-T21
+
+Para contribuir para o MVP-T21, siga estas etapas:
+
+1. Faça um fork do repositório.
+2. Crie um novo branch: `git checkout -b <nome_do_branch>`.
+3. Faça suas alterações e commit: `git commit -m '<mensagem_do_commit>'`
+4. Faça push para o branch original: `git push origin <nome_do_projeto>/<local>`
+5. Crie o pull request.
+
+Alternativamente, veja a documentação do GitHub sobre [criação de um pull request](https://help.github.com/pt/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+
+
+### Licença
+
+Este projeto usa a seguinte licença: `MIT Licence`.
+
 </details>
 </div>
 
