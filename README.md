@@ -1,6 +1,6 @@
-# MVP-T21
+# math pow
 
-## T21 - Aplicação aplicativo gamificado para o ensino de matemática básica para crianças com Síndrome de Down
+## math pow - Aplicativo gamificado para o ensino de matemática fundamental I
 
 ## Mockup UI
 ![T21](https://github.com/lucasagw/MVP-T21/assets/54041918/320b728b-d329-49db-aad1-b4e31f676486)
